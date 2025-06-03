@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Řím – Památky</title>
+  <style>
+    body {
+      background-color: rgb(255, 239, 222);
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      color: saddlebrown;
+    }
+
+    .image-container {
+      width: 23%;
+      margin: 1%;
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .image-container img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .image-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .description {
+      display: none;
+      font-size: 16px;
+      color: saddlebrown;
+      margin-top: 10px;
+    }
+
+    .active .description {
+      display: block;
+    }
+
+    @media screen and (max-width: 768px) {
+      .image-container {
+        width: 48%;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .image-container {
+        width: 100%;
+      }
+    }
+  </style>
+  <script>
+    let clickTimer;
+
+    function toggleText(el) {
+      // Zobrazit text při jednom kliknutí
+      el.classList.toggle("active");
+    }
+
+    function openMap(el, mapUrl) {
+      // Otevře mapu při dvojkliku
+      window.open(mapUrl, "_blank");
+    }
+
+    function handleClick(el, mapUrl) {
+      clearTimeout(clickTimer);  // Resetování časovače před novým kliknutím
+
+      // Při prvním kliknutí ukáže text
+      clickTimer = setTimeout(function() {
+        toggleText(el); // Zobrazí popis
+      }, 300); // Čeká 300 ms na možný dvojklik
+
+      // Při dvojkliku otevře mapu
+      el.addEventListener('dblclick', function() {
+        openMap(el, mapUrl);
+      });
+    }
+  </script>
+ <style>
+    body {
+      background-color: rgb(255, 239, 222);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center; /* přidáno */
+    }
+
+    .legend {
+      font-size: 12px;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+      border-radius: 6px;
+      max-width: 350px;
+      background-color: #f9f9f9;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .legend h3 {
+      font-size: 14px;
+      margin-top: 0;
+    }
+
+    .legend ul {
+      padding-left: 0;
+      list-style-position: inside;
+    }
+  </style>
+ 
+</head>
+<body>
+
+<font size="5">
+  <h1 align="center"> <font color="saddlebrown"> ŘÍM </font> </h1>
+ 
+<h2 align="center"> <font color="saddlebrown"> Základní informace </font> </h2>
+    <li algin="center"> hlavní město Itálie
+      <li algin="center"> přibližně 2,75 mil. obyvatel
+        <li algin="center">historické památky
+           <li algin="center">Řím je důležitým centrem křesťanství a kultury
+             <li algin="center">jazyk: italština
+            <figure>
+  <img src="https://www.radicestujeme.eu/img/exphoto/rim_mapa_1.png"
+       alt="Mapa Říma"
+       style="
+         max-width: 600px;
+         width: 90%;
+         border-radius: 12px;
+         margin: 20px auto;
+         display: block;
+         box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+         transition: transform 0.4s ease;
+       "
+       onmouseover="this.style.transform='scale(1.08)';"
+       onmouseout="this.style.transform='scale(1)';"
+  >
+</figure>
+
+              <h2 align="center"> <font color="saddlebrown">                      Historie </font> </h3>
+    <li algin="left">Podle legendy založili město bratři Romulus a Remus.
+      Romulus se stal prvním králem a položil základy římské civilizace.
+      <li algin="ceneter"> Království bylo nahrazeno republikou, kde moc měla senát a volení úředníci. Během této doby Řím expandoval po celé Itálii a později ovládl Středomoří.
+        <li algin="left"> Julius Caesar připravil půdu pro vznik císařství, které započal jeho adoptivní syn Augustus. Řím dosáhl svého největšího rozmachu, ale postupně začal upadat kvůli vnitřním krizím a nájezdům barbarů.
+          <li algin="left"> Říše se rozdělila na západní a východní část. Západořímská říše zanikla po svržení posledního císaře Romula Augusta, zatímco východní část (Byzantská říše) pokračovala ještě tisíc let.
+             <li algin="left">původním jazykem byla latina
+               
+
+<h2 align="center"> <font color="saddlebrown"> Umění
+</font> </h1>
+    <li algin="left">Panelové obrazy
+      <li algin="left"> Dekorativní nástěná malba
+        <li algin="left">Mozaiky
+ <h2 align="center"> <font color="saddlebrown"> Architektura
+</font> </h1>
+    <li algin="left">Chrámy
+        <li algin="left">Triumfální oblouk
+         <li algin="left">Baziliky
+            <li algin="left">Divadla
+              <p>
+<h2 align="center"> <font color="saddlebrown"> Památky
+</font> </h2>
+           
+<div class="legend" style="font-size: 12px; border: 1px solid #ccc; padding: 10px 15px; border-radius: 6px; max-width: 350px; background-color: #f9f9f9; margin: 0 auto; text-align: center;">
+  <h3 style="font-size: 14px; margin-top: 0;">Legenda k ovládání</h3>
+  <ul style="padding-left: 0; list-style-position: inside;">
+    <li><strong>Jedním kliknutím</strong> zobrazíte stručný popis památky.</li>
+    <li><strong>Dvojklikem</strong> budete přesměrováni na mapu s přesnou polohou místa.</li>
+  </ul>
+</div>
+
+
+
+             
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?source=osm&id=19715773&x=12.4924173&y=41.8901743&z=18')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/1200px-Colosseo_2020.jpg" alt="Koloseum">
+    <div class="description"><strong>Koloseum</strong><br>- Největší římský amfiteátr.<br>- Odehrávaly se zde gladiátorské zápasy.</p></div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/turisticka?source=osm&id=1033855210&ds=1&x=12.4559876&y=41.9028551&z=15')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Petersdom_von_Engelsburg_gesehen.jpg" alt="Bazilika sv. Petra">
+    <div class="description"><strong>Bazilika sv. Petra</strong><br>- Nachází se ve Vatikánu.<br>- Centrum katolické církve.</p></div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?dim=5cf946e756b7693484baae58&x=12.4767713&y=41.8985573&z=18')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Pantheon_Rom_1_cropped.jpg" alt="Pantheon">
+    <div class="description"><strong>Pantheon</strong><br>- Nejzachovalejší antická stavba ve městě.<br>- Má devítimetrový stropní otvor.</p></div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?source=osm&id=127704345&ds=1&x=12.4844820&y=41.8921199&z=18')">
+    <img src="https://italie.svetadily.cz/userfiles/image/zeme%20sveta/italie/forum-romanum-6.jpg" alt="Forum Romanum">
+    <div class="description"><strong>Forum Romanum</strong><br>- Tehdejší centrum Říma.<br>- Dnes jsou zde ruiny.<br>- Nejhezčí výhled z legendárního pahorku Kapitol.</p></div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?q=Font%C3%A1na%20di%20Trevi&source=osm&id=1112024937&x=12.4832848&y=41.9009778&z=18')">
+    <img src="https://cdn.levnocestovani.eu/fontana_1664960745867.jpg" alt="Fontána di Trevi">
+    <div class="description"><strong>Fontána di Trevi</strong><br>- Nejslavnější římská fontána.<br>- Zdobí ji sochy Neptuna a dvou tritonů.</p></div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?source=osm&id=12036594&ds=1&x=12.4825796&y=41.9058642&z=18')">
+    <img src="https://www.protravel.cz/img/__galerie/39264-92047-66642-45692-23358.jpg" alt="Španělské schody">
+    <div class="description"><strong>Španělské schody</strong><br>- Vedou ke kostelu Trinita dei Monti.<br>- Navrženy ve 20. letech 18. století.</p></div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?source=osm&id=94324737&ds=1&x=12.4662886&y=41.9025160&z=17')">
+    <img src="https://italie.svetadily.cz/userfiles/image/zeme%20sveta/italie/andelsky-hrad-rim-3.jpg" alt="Andělský hrad">
+    <div class="description"><strong>Andělský hrad</strong><br>- Stavba na nábřeží Tiberu.<br>- Sloužila jako mauzoleum, pevnost i vězení.<br>- Uchovávali se zde papežové v bezpečí.</p></div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?source=osm&id=1066632415&ds=1&x=12.4770496&y=41.8951246&z=18')">
+    <img src="https://civitavecchia.portmobility.it/sites/default/files/largo_di_torre_argentina_-_roma_.jpg" alt="Largo di Torre Argentina">
+    <div class="description"><strong>Largo di Torre Argentina</strong><br>- Stavba na nábřeží Tiberu.<br>- Sloužila jako mauzoleum, pevnost i vězení.<br>- Uchovávali se zde papežové v bezpečí.</p></div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?source=osm&id=1038460680&ds=1&x=12.4724677&y=41.8988033&z=18')">
+    <img src="https://www.protravel.cz/img/__galerie/83202-26306-69724-40385-42527.jpg" alt="Fontána čtyř řek na Navoně">
+    <div class="description"><strong>Fontána čtyř řek</strong><br>- Dunaj, Ganga, Nil a La Plata – reprezentují tehdy známé kontinenty.<br>- Nachází se na barokním náměstí Navona.</p></div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?source=osm&id=137593030&ds=1&x=12.5071038&y=41.8849256&z=17')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/San_Giovanni_Laterano_Rom.jpg" alt="Lateránská bazilika">
+    <div class="description"><strong>Lateránská bazilika</strong><br>- Zlatě zdobený interiér.<br>- Uchovává relikvie a umělecká díla.<br>- Důležitý kostel katolické církve.</p></div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?q=palatin&source=osm&id=137397461&ds=2&x=12.4874580&y=41.8897976&z=17')">
+    <img src="https://file.mahalo.cz/2015/12/Palatin.jpg" alt="Palatin">
+    <div class="description">
+        <strong>Palatin</strong><br>
+        - jeden ze sedmi římských pahorků
+        - podle legendy zde vznikl Řím, rozsáhlé ruiny císařských paláců
+    </div>
+</div>
+
+   <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?source=osm&id=336&ds=1&x=12.4506922&y=41.9038047&z=16')">
+    <img src="https://www.protravel.cz/img/__galerie/56237-22313-33838-32709-25527.jpg" alt="Vatikán">
+    <div class="description">
+      <strong>Vatikán</strong><br>
+      - nachází se uprostřed Říma<br>
+      - sídlo papeže
+    </div>
+  </div>
+
+ 
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?source=osm&id=1052690816&ds=1&x=12.4846584&y=41.9127711&z=15')">
+    <img src="https://img2.oastatic.com/img2/77538903/max/variant.jpg" alt="Villa Borghese">
+    <div class="description">
+      <strong>Villa Borghese</strong><br>
+      - nejznámější park<br>
+      - v 17. století vybudováno letní sídlo obklopené krásnými zahradami v barokním stylu
+    </div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/cs/zakladni?source=osm&id=1075980418&ds=1&x=12.4857038&y=41.8859719&z=17')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/CircusMaximusSO.jpg" alt="Circus Maximus">
+    <div class="description">
+      <strong>Circus Maximus</strong><br>
+      - byl obrovský antický stadion určený především pro závody vozatajů<br>
+      - patří k nejstarším a největším sportovištím v dějinách
+    </div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/cs/zakladni?source=osm&id=12029012&ds=1&x=12.4923939&y=41.8788767&z=17')">
+    <img src="https://www.protravel.cz/img/__galerie/74774-59227-97850-60353-37379.jpg" alt="Caracallovy lázně">
+    <div class="description">
+      <strong>Caracallovy lázně</strong><br>
+      - byly jedny z největších a nejhonosnějších veřejných lázní starověkého Říma<br>
+      - dnes už jen ruiny
+    </div>
+  </div>
+
+  <div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/cs/zakladni?source=osm&id=11720346&ds=1&x=12.4757642&y=41.8949729&z=18')">
+    <img src="https://www.turismoroma.it/sites/default/files/Teatro%20Argentina%20-%20Teatro%20di%20Roma.jpg" alt="Teatro Argentina">
+    <div class="description">
+      <strong>Teatro Argentina</strong><br>
+      - jedno z nejstarších a nejvýznamnějších divadel v Římě<br>
+      - nedaleko náměstí Largo di Torre Argentina<br>
+      - typický podkovitý tvar
+    </div>
+  </div>
+ <div class="image-container"
+     onclick="handleClick(this, 'https://mapy.com/cs/zakladni?source=osm&id=40479452&ds=1&x=12.4822424&y=41.8944364&z=18')">
+  <img src="https://www.protravel.cz/img/__galerie/58881-34621-25650-99886-58418.jpg" alt="Viktor Emanuel II.">
+  <div class="description">
+    <strong>Viktor Emanuel II.</strong><br>
+    - monumentální památník věnovaný prvnímu králi sjednocené Itálie<br>
+    - nachází se na Piazza Venezia<br>
+    - často nazýván „Altare della Patria“
+  </div>
+</div>
+ 
+             
+
+<div class="image-container" onclick="handleClick(this, 'https://mapy.com/cs/zakladni?source=osm&id=1085690035&ds=1&x=12.4687522&y=41.8910801&z=15')">
+    <img src="https://as1.ftcdn.net/v2/jpg/02/14/36/72/1000_F_214367292_KAfNhwFJ0OTIkd6nYiLstxJsArjUyrf9.jpg">
+    <div class="description">
+      <strong>Trastevere</strong><br>
+      - Bohémská čtvrť na pravém břehu Tibery<br>
+      - typické úzké italské uličky<br>
+     
+    </div>
+  </div>
+</body>
+</html>
